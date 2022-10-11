@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WenPrj</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    @await RenderSectionAsync("Style", required: false)
+</head>
+<body>    
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">MDA</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="links">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">link1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" asp-area="" asp-controller="product" asp-action="ProductChart">商品上架</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">link3</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                Items
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Item 1</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Item 2</a>
+                                <a class="dropdown-item" href="#">Item 3</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        @*<nav class="navbar navbar-expand-sm navbar-light bg-white">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="List"><i class="fa-solid fa-tape">&nbsp;</i>回首頁</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="links">
+                <ul class="navbar-nav mr-auto">
+                    <li class="dropdown nav-item">  <a class="navbar-brand" asp-area="" asp-controller="product" asp-action="ProductChart">評論分析</a></li>
+                    <li class="nav-item active"> <a class="navbar-brand" asp-area="" asp-controller="product" asp-action="ProductChart">電影院訂位報表</a></li>
+                    <li class="nav-item"> <a class="navbar-brand" asp-area="" asp-controller="product" asp-action="ProductChart">商品上架</a></li>
+                </ul>
+            </div>
+        </nav>*@
+
+      
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-white footer text-muted">
+        <div class="container">
+            &copy; 2022 - WenProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

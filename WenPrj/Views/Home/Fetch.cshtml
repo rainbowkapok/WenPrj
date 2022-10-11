@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Fetch";
+}
+
+<h1>Fetch</h1>
+
+@section Scripts{ 
+    <script>
+        //console.log(fetch("@Url.Content("~/Home/Index")"))
+        fetch("@Url.Content("~/Home/Index")")
+            .then(response =>
+            {
+                //console.log(response.text())
+                return response.text()
+            })
+            .then(data =>
+            {
+                console.log(data)
+            })
+            .catch(error => console.log(error))
+    </script>
+}
