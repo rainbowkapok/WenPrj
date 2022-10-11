@@ -1,15 +1,14 @@
 ﻿
 @{
-    ViewData["Title"] = "ProductChart";
+    ViewData["Title"] = "ProductChartTwo";
     Layout = "~/Views/Shared/_ChartLayout.cshtml";
 }
 
-
-<h4>Chart 樣本1</h4>
+<h4>Chart 樣本2</h4>
 
 <div class="container">
     <div class="card bg-white text-dark" style="width:20rem;">
-       
+
         <div class="card-body">
             <h4 class="card-title">樣本</h4>
             <p class="card-text">設計樣本</p>
@@ -23,39 +22,32 @@
             </form>
         </div>
     </div>
-</div> 
+</div>
 
 
 @section Scripts{
     <script>
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ["一月", "二月", "三月", "四月", "五月", "六月"],
-                datasets: [
-                    {
-                        label: '可樂',
-                        borderColor: window.chartColors.red,
-                        backgroundColor: window.chartColors.red,
-                        data: GetRandomNumbers(6),
-                        fill: false
-                    },
-                    {
-                        label: '爆米花',
-                        borderColor: window.chartColors.green,
-                        backgroundColor: window.chartColors.green,
-                        data: GetRandomNumbers(6),
-                        fill: false
-                    },
-                ]
+                datasets: [{
+                    label: '想睡覺人數',
+                    data: [12, 19, 4, 5, 8, 4],
+                    borderWidth: 1,
+                    backgroundColor: 'rgb(255, 159, 64)'
+                }]
             },
-
-
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
         });
     </script>
 }
-
-
-
-

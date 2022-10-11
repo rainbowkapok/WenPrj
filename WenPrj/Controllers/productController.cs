@@ -22,6 +22,16 @@ namespace WenPrj.Controllers
         {
             return View();
         }
+
+        public IActionResult ProductChartTwo()
+        {
+            return View();
+        }
+
+        public IActionResult ProductChartSample()
+        {
+            return View();
+        }
         public IActionResult TestSearchKeyword(string keyword)
         {
             var product = _context.商品資料products
